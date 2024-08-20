@@ -1,0 +1,29 @@
+data:text/html;charset=utf-8,%0A<html>
+<head>
+<title>Alphabet</title>
+<style>
+html {padding:5%;color:%23EEE;font-family:Courier New;font-size: 20px} body {background:%23222}
+</style>
+</head>
+<body>
+<h1>Alphabet v1</h1>
+<input type="text" id="letter"></input>
+<input type="text" id="mod"></input>
+<button id="trigger">Find</button>
+<textarea style="width: 80vw; height: 80vh" id="output"></textarea>
+<footer>Copyright 2024 Pacifiky. All rights reserved.</footer>
+<script>
+let alph = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+let trig = document.getElementById("trigger");
+let letter = document.getElementById("letter");
+let output = document.getElementById("output");
+let modif = document.getElementById("mod");
+trig.addEventListener("click",(e)=>{
+let idofalph = alph.indexOf(letter.value.toLowerCase()) + parseInt(modif.value);
+if(idofalph < 0){idofalph = 26+idofalph};
+output.innerHTML = alph[idofalph];
+return;
+});
+</script>
+</body>
+</html>
